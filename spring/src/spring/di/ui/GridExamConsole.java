@@ -6,6 +6,10 @@ public class GridExamConsole implements ExamConsole {
 
 	private Exam exam;
 	
+	public GridExamConsole() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public GridExamConsole(Exam exam) {
 		this.exam = exam;
 	}
@@ -13,11 +17,13 @@ public class GridExamConsole implements ExamConsole {
 	@Override
 	public void print() {
 		System.out.println("天天天天天天天天天天天天天");
-		System.out.println("| total  |  avg  |");
-//		System.out.println("| %d  |  %f  |", exam.total(), exam.avg() );
+		System.out.println("|  total |  avg  |");
+		System.out.println("天天天天天天天天天天天天天");
+		System.out.printf("|  %3d   | %3.2f |\n", exam.total(), exam.avg() );
 		System.out.println("天天天天天天天天天天天天天");
 
 	}
+	
 
 	@Override
 	public void setExam(Exam exam) {
