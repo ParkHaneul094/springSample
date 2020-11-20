@@ -3,9 +3,19 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
+	
+<!-- 	<context:annotation-config /> -->
+	<context:component-scan base-package="spring.di.ui, spring.di.entity" />
+	
+	<bean id="exam" class="spring.di.entity.NewlecExam" p:kor="1" p:eng="1" />
+<!-- 	<bean id="exam2" class="spring.di.entity.NewlecExam" p:kor="20" p:eng="20" /> -->
+	
+	
 <!-- 	Exam exam = new NewlecExam(); -->
 <!-- 	<bean id="exam" class="spring.di.entity.NewlecExam"> -->
 <!-- 		<constructor-arg name="kor" value="10" /> -->
@@ -19,21 +29,24 @@
 <!-- 		<property name="com" value="10" /> -->
 <!-- 	</bean> -->
 
-	<bean id="exam" class="spring.di.entity.NewlecExam" p:kor="10" p:eng="20" />
-	
 <!-- 	ExamConsole console = new GridExamConsole(exam); -->
-	<bean id="console" class ="spring.di.ui.GridExamConsole"> 
+<!-- 	<bean id="console" class ="spring.di.ui.InlineExamConsole">  -->
 <!-- 		console.setExam(exam); -->
-		<property name="exam" ref="exam"></property>
-	</bean>
+<!-- 		<property name="exam" ref="exam"></property> -->
+<!-- 	</bean> -->
 	
-	<bean id="exams" class="java.utill.ArrayList" >
+<!-- 	<util:list id="exams" list-class="java.util.ArrayList"> -->
+<!-- 		<bean class="spring.di.entity.NewlecExam" p:kor="10" p:eng="20" /> -->
+<!-- 		<ref bean="exam" /> -->
+<!-- 	</util:list> -->
+	
+<!-- 	<bean id="exams" class="java.util.ArrayList" > -->
 <!-- 		<constructor-arg> -->
 <!-- 			<list> -->
 <!-- 				<bean class="spring.di.entity.NewlecExam" p:kor="10" p:eng="20" /> -->
 <!-- 				<ref bean="exam" /> -->
 <!-- 			</list> -->
 <!-- 		</constructor-arg> -->
-	</bean>
+<!-- 	</bean> -->
 
 </beans>
